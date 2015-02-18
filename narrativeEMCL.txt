@@ -1,0 +1,123 @@
+
+
+
+- INTRO -
+Good morning everyone, and welcome to my talk. My name is Sinan Egilmez.
+
+I am studying here in Universidade Nova de Lisboa as a PhD student where I'm a member of Center of Articial Intelligence group which is led by my supervisor Profesor Joao Leite.
+
+As my PhD work, I have been involved in the research of the Social Abstract Argumentation Frameworks. 
+
+Unfortunately because of the time concerns, I won't be able to provide you with a comprehensive knowledge of Social Abstract Argumentation Frameworks. 
+
+But hopefully I will tell you enough so that you will get the big picture.
+
+And then we may continue by talking about a particular problem concerning our framework that I have been focusing on lately.
+
+
+
+-SLIDE 1-
+Motivation SAF
+
+
+-SLIDE 2-
+Brief introduction  SAF
+
+
+-SLIDE 3-
+State of art of SAF
+
+
+
+
+
+-SLIDE 4-
+There are still some open problems concerning Social Argumentation Frameworks.
+So now I want to talk about one particular problem that I have been focusing on lately.
+We have mentioned that for a given social debate, our framework autonomously computes a numerical value for each argument in the debate. 
+And this value is between zero and one, inclusive.
+However when the argumentation graph is dense, or in other terms when we have a lot of attacks between the arguments; most of these values tend to get really close to zero.
+So if were to make a 2 dimensional plot of the values we would get something like this:
+[SEKIL]
+ where most of the values are really small, and then we have a few high values, perhaps which stand for some unattacked arguments.
+In all honesty, we are not too pleased with this type of behaviour. 
+The reason, as you might remember we are trying to display the formal outcome of the debate to our users with a sensible GUI, 
+On the interface an argument's size gets bigger as it's strengt increases, and the argument's size shrinks when the argument gets weaker.
+So firstly, when a lot of values are clenched together, it would be hard for our users to distinguish the relative strengths of tha arguments from each other.
+But perhaps more dramatically, most of the arguments may almost vanish from the screen since their values are so close to zero. 
+So all of a sudden, the user might end up staring at a screen where she only sees a small fragment of the original debate. 
+
+
+-SLIDE 5-
+
+So somehow we are trying to find a normalization method that will help us in spreading these values between the unit interval, so that one  may better distinguish these close values. 
+
+However this appears to be challenging a problem. 
+
+Because at the end of the day we are still bnounded by our initial end points.
+
+That wouldn't pose a problem if the model evaluation values were 
+located around the center in most SAF models.
+
+Indeed if they were scattered similar to the graph, then we could simple spread the values in either direction, or in both directions.
+
+Just like blowing a baloon, we could push the values away from the center of the interval and make us of the available space close to end points. 
+
+But as we mentioned earlier, this does not appear to be the common situation in our framework's case. 
+
+Usually the lower bound is highly populated, and even if small in number, there are some values close to 1.
+
+Thus somehow, we are forced to make it work with the initial interval we are given.
+
+
+ -SLIDE 6-
+
+So how do we formally tackle this challenging problem?
+
+Well, the first step is coming up with a formal definition of what is a normalized dataset.
+
+So that when we are faced with a set of model evaluation values, we may determine whether we have to normalize that dataset or not.
+
+Here we may utilize concepts from the field of statics like standart deviation or certain distributions in order to characterize the datasets.
+ 
+
+Secondly we need some guiding principles for the normalizition methodology.
+
+
+In the end, after the normalizing process is done, we will surely want the result to obey some properties. 
+
+For instance, we may want to gurantee the existence of the arguments.
+
+In the sense that for an argument with a positive model evaluation, the algorithm never computes the normalized value as zero.
+
+We may want to keep the relative order of the initial model evaluations.
+
+We may take a further step and maintain the order of the relative distances between the values.
+
+So on and so forth...
+
+With these properties we may define a class, or perhaps for different contexts, multiple classes of desired mappings. 
+
+
+And finally we have to constuct the algorithms, which will hopefully belong to our class of desired mappings.
+
+
+
+ -SLIDE 7-
+
+
+
+
+
+
+- add new properties perhaps further limit class of desirable mappings
+
+
+ -QUESTIONS-
+
+Once again thank you very much for listening to my talk. I would be more than happy to answer any questions you might have.
+
+
+-EXTRA SLIDE-
+
+Algorithm if need be.
